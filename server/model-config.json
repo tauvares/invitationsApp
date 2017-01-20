@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "Email": {
+    "dataSource": "emailDS"
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "Customer": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Host": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Guest": {
+    "dataSource": "mongoDS",
+    "public": true
+  }
+}

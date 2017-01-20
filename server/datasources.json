@@ -1,0 +1,31 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDS": {
+    "host": "ds111748.mlab.com",
+    "port": 11748,
+    "url": "mongodb://admin:60senaocansa@ds111748.mlab.com:11748/invitations",
+    "database": "invitations",
+    "password": "60senaocansa",
+    "name": "mongoDS",
+    "user": "admin",
+    "connector": "mongodb"
+  },
+  "emailDS": {
+    "name": "mail",
+    "defaultForType": "mail",
+    "connector": "mail",
+    "transports": [{
+      "type": "SMTP",
+      "host": "smtp.gmail.com",
+      "secure": true,
+      "port": 465,
+      "auth": {
+        "user": "user@gmail.com",
+        "pass": "password"
+      }
+    }]
+  }
+}
