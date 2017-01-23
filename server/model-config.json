@@ -14,7 +14,7 @@
     ]
   },
   "Email": {
-    "dataSource": "emailDS"
+    "dataSource": "mailgunEmail"
   },
   "User": {
     "dataSource": "db",
