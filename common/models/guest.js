@@ -35,7 +35,7 @@ module.exports = function(Guest) {
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail
 
-    from_email = new helper.Email("test@example.com")
+    from_email = new helper.Email("joaos@mpdft.mp.br")
     to_email = new helper.Email("tauvares@gmail.com")
     subject = "Sending with SendGrid is Fun"
     content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js")
