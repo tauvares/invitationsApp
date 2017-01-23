@@ -62,7 +62,7 @@
       "principalType": "ROLE",
       "principalId": "admin",
       "permission": "ALLOW",
-      "property": "sendEmail"
+      "property": "sendEmailSG"
     },
     {
       "accessType": "WRITE",
