@@ -35,11 +35,11 @@ module.exports = function(Guest) {
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail;
 
-    from_email = new helper.Email("joaos@mpdft.mp.br");
-    to_email = new helper.Email("tauvares@gmail.com");
-    subject = "Sending with SendGrid is Fun";
-    content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
-    mail = new helper.Mail(from_email, subject, to_email, content);
+    var from_email = new helper.Email("joaos@mpdft.mp.br");
+    var to_email = new helper.Email("tauvares@gmail.com");
+    var subject = "Sending with SendGrid is Fun";
+    var content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
+    var mail = new helper.Mail(from_email, subject, to_email, content);
 
     var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
     console.log(process.env.SENDGRID_API_KEY);
