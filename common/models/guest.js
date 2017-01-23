@@ -40,7 +40,7 @@ module.exports = function(Guest) {
     var subject = "Sending with SendGrid is Fun";
     var content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
     var mail = new helper.Mail(from_email, subject, to_email, content);
-    var sendgridKey = 'U3osxrhm0EuOFiEnSXyPyt76VqeTojH1tnwPYQBwG40jGmsiNv1YwiCAHpNA1xhB';
+    var sendgridKey = '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';
 
     var sg = require('sendgrid')(sendgridKey);
     console.log('The sendgrid key is ' + sendgridKey);
