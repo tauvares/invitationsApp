@@ -13,18 +13,14 @@
     "user": "admin",
     "connector": "mongodb"
   },
-  "emailDS": {
-    "name": "mail",
-    "defaultForType": "mail",
+  "mailgunEmail": {
+    "name": "MailgunEmail",
     "connector": "mail",
-    "transports": [{
-      "type": "SMTP",
-      "host": "smtp.gmail.com",
-      "secure": true,
-      "port": 465,
-      "auth": {
-        "user": "user@gmail.com",
-        "pass": "password"
+    "transports" : [{
+      "type" : "Mailgun",
+      "auth" : {
+        "api_key" : "key-11929e8ae67620b76e7e418880eb1139",
+        "domain" : "https://api.mailgun.net/v3/sandboxaea6fd81b8294bddafdda5696156f36d.mailgun.org"
       }
     }]
   }
