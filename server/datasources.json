@@ -3,12 +3,6 @@
     "name": "db",
     "connector": "memory"
   },
-  "images": {
-    "name": "images",
-    "connector": "loopback-component-storage",
-    "provider": "filesystem",
-    "root": "./client/"
-  },
   "mongoDS": {
     "host": "ds111748.mlab.com",
     "port": 11748,

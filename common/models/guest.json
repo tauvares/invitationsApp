@@ -25,7 +25,7 @@
       "required": true,
       "default": "Email not sent"
     },
-    "invitationsConfirmed":{
+    "invitationsConfirmed": {
       "type": "string"
     }
   },
