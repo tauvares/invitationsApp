@@ -14,6 +14,9 @@
       "type": "string",
       "required": true
     },
+    "address": {
+      "type": "string"
+    },
     "phone": {
       "type": "string"
     },

@@ -6,6 +6,8 @@ module.exports = function(Guest) {
         // using SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail;
+    var fs = require('fs');
+    var stringTemplate = fs.readFileSync("../../client/views/emailTemplate.html", "utf8");
 /*
     var from_email = new helper.Email("joaos@mpdft.mp.br");
     var to_email = new helper.Email("tauvares@gmail.com");
@@ -17,8 +19,16 @@ module.exports = function(Guest) {
     var from_email = new helper.Email(req.hostname);
     var to_email = new helper.Email(req.guestname);
     var subject = req.eventname;
-    var content = new helper.Content("text/plain", req.eventdescription);
-
+    //var content = new helper.Content("text/html", req.eventdescription);
+    var content = new helper.Content("text/html", stringTemplate);
+    /*
+    {
+    "hostname":"joaos@mpdft.mp.br",
+    "guestname":"tauvares@gmail.com",
+    "eventname":"Encontro da rede CEMA de instituições",
+    "eventdescription":"Encontro da rede CEMA de instituições, que ocorrerá no dia 08/02/17"
+    }
+    */
     var mail = new helper.Mail(from_email, subject, to_email, content);
     var sendgridKey = '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';
     var sg = require('sendgrid')(sendgridKey);
