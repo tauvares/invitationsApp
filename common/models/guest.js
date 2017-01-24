@@ -28,16 +28,8 @@ module.exports = function(Guest) {
     '<H1>InvitationsApp</H1>'+
     '<H4>' + req.hostname + '</H4>'+
     '<H4>' +req.hostaddress + '</H4>'+
-    '<H4>' +req.hostphone + '</H4>'+
-    ;
-/*
-    var from_email = new helper.Email("joaos@mpdft.mp.br");
-    var to_email = new helper.Email("tauvares@gmail.com");
-    var subject = "Sending with SendGrid is Fun";
-    var content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
-    var mail = new helper.Mail(from_email, subject, to_email, content);
-    var sendgridKey = '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';
-*/
+    '<H4>' +req.hostphone + '</H4>';
+
     var from_email = new helper.Email(req.hostemail);
     var to_email = new helper.Email(req.guestemail);
     var subject = req.eventname;
