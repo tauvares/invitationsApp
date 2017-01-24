@@ -12,8 +12,9 @@ module.exports = function(Guest) {
     '  padding-left: 0 !important;'+
     '  padding-right: 0 !important;'+
     '}</style>'+
-    '<H2 align="center" style="color:red">InvitationsApp</H2>'+
-    '<img align="center" src="https://invitationsapp.herokuapp.com/api/containers/images/download/invitationsAppLogoMini.png">'+
+    '<table align="center"><tr><td  align="center">'+
+    '<img align="center" src="https://invitationsapp.herokuapp.com/api/containers/images/download/invitationsAppLogoMini.png"></td></tr>'+
+    '</table>'+
     '<HR>'+
     '<H3 align="center">' + req.eventname + '</H3>'+
     '<p align="center">Prezado responsável pela instituição - ' + req.guestname + ', </p>'+
@@ -26,7 +27,9 @@ module.exports = function(Guest) {
     '<table align="center"><tr><td align="center" style="-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; font-size: 16px;" bgcolor="#FF6666">'+
       '<a align="center" href="' + req.confirmationlink + '" class="bulletproof-button" target="_blank" style="height: px; width: 250px; font-size: 16px; line-height: px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; padding: 12px 12px 12px 12px; text-decoration: none; color: #ffffff; text-decoration: none; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border: 1px solid #FF6666; display: inline-block;">CONFIRMAR</a>'+
     '</td></tr></table>'+
-    '<H2 align="center" style="color:red">InvitationsApp</H2>';
+    '<table align="center"><tr><td  align="center">'+
+    '<img align="center" src="https://invitationsapp.herokuapp.com/api/containers/images/download/invitationsAppLogoMini.png"></td></tr>'+
+    '</table>'+
     var from_email = new helper.Email(req.hostemail);
     var to_email = new helper.Email(req.guestemail);
     var subject = req.eventname;
