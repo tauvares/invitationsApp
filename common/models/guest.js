@@ -2,7 +2,7 @@
 
 module.exports = function(Guest) {
 //{"username":"admin","password":"admin"}
-  Guest.sendEmailSG = function(req, cb) {
+  Guest.sendEmail = function(req, cb) {
         // using SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail;
@@ -18,17 +18,17 @@ module.exports = function(Guest) {
     '  padding-right: 0 !important;'+
     '}</style>'+
 
-    '<H1>InvitationsApp</H1>'+
-    '<H3>' + req.eventname + '</H3>'+
+    '<H2 align="center">InvitationsApp</H2>'+
+    '<H3 align="center">' + req.eventname + '</H3>'+
     '<p>' + req.eventdescription + '</p>'+
-    '<td align="center" style="-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; font-size: 16px;" bgcolor="#FF6666">'+
-      '<a href="" class="bulletproof-button" target="_blank" style="height: px; width: 250px; font-size: 16px; line-height: px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; padding: 12px 12px 12px 12px; text-decoration: none; color: #ffffff; text-decoration: none; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border: 1px solid #FF6666; display: inline-block;">CONFIRM CONFIRMAR</a>'+
-    '</td>'
+    '<table><tr><td align="center" style="-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; font-size: 16px;" bgcolor="#FF6666">'+
+      '<a href="" class="bulletproof-button" target="_blank" style="height: px; width: 250px; font-size: 16px; line-height: px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; padding: 12px 12px 12px 12px; text-decoration: none; color: #ffffff; text-decoration: none; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border: 1px solid #FF6666; display: inline-block;">CONFIRM/CONFIRMAR</a>'+
+    '</td></tr></table>'+
     '<HR>'+
-    '<H1>InvitationsApp</H1>'+
-    '<H4>' + req.hostname + '</H4>'+
-    '<H4>' +req.hostaddress + '</H4>'+
-    '<H4>' +req.hostphone + '</H4>';
+    '<H1 align="center">InvitationsApp</H1>'+
+    '<H4 align="center">' + req.hostname + '</H4>'+
+    '<H4 align="center">' +req.hostaddress + '</H4>'+
+    '<H4 align="center">' +req.hostphone + '</H4>';
 
     var from_email = new helper.Email(req.hostemail);
     var to_email = new helper.Email(req.guestemail);
@@ -38,13 +38,13 @@ module.exports = function(Guest) {
     /*
     {
     "hostname":"João Tavares",
-    "hostemail":"tauvares@gmail.com",
+    "hostemail":"joaos@mpdft.mp.br",
     "guestname":"filho segundo",
-    "guestemail":"joaos@mpdft.mp.br",
+    "guestemail":"tauvares@gmail.com",
     "eventname":"Encontro da rede CEMA de instituições",
-    "eventdescription":"Encontro da rede CEMA de instituições, que ocorrerá no dia 08/02/17"
+    "eventdescription":"Encontro da rede CEMA de instituições, que ocorrerá no dia 08/02/17",
     "hostaddress":"ED SEDE DO MPDFT",
-    "hostphone":"3343-9500",
+    "hostphone":"3343-9500"
     }
     */
     var mail = new helper.Mail(from_email, subject, to_email, content);
@@ -64,9 +64,9 @@ module.exports = function(Guest) {
     })
   };
   Guest.remoteMethod(
-    'sendEmailSG', {
+    'sendEmail', {
       http: {
-        path: '/sendEmailSG',
+        path: '/sendEmail',
         verb: 'post'
       },
       accepts: {
