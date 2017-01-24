@@ -15,16 +15,17 @@ module.exports = function(Guest) {
     '}</style>'+
     '<H2 align="center" style="color:red">InvitationsApp</H2>'+
     '<H3 align="center">' + req.eventname + '</H3>'+
+    '<p align="center">Prezado responsável pela instituição - ' + req.guestname + ', </p>'+
     '<p align="center">' + req.eventdescription + '</p>'+
-    '<table align="center"><tr><td align="center" style="-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; font-size: 16px;" bgcolor="#FF6666">'+
-      '<a align="center" href="' + req.confirmationlink + '" class="bulletproof-button" target="_blank" style="height: px; width: 250px; font-size: 16px; line-height: px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; padding: 12px 12px 12px 12px; text-decoration: none; color: #ffffff; text-decoration: none; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border: 1px solid #FF6666; display: inline-block;">CONFIRM/CONFIRMAR</a>'+
-    '</td></tr></table>'+
-    '<HR>'+
-    '<H2 align="center" style="color:red">InvitationsApp</H2>'+
+    '<p align="center">Atenciosamente,</p>'+
     '<H4 align="center">' + req.hostname + '</H4>'+
     '<H4 align="center">' +req.hostaddress + '</H4>'+
-    '<H4 align="center">' +req.hostphone + '</H4>';
-
+    '<H4 align="center">' +req.hostphone + '</H4>'+
+    '<HR>'+
+    '<table align="center"><tr><td align="center" style="-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; font-size: 16px;" bgcolor="#FF6666">'+
+      '<a align="center" href="' + req.confirmationlink + '" class="bulletproof-button" target="_blank" style="height: px; width: 250px; font-size: 16px; line-height: px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; padding: 12px 12px 12px 12px; text-decoration: none; color: #ffffff; text-decoration: none; -webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; border: 1px solid #FF6666; display: inline-block;">CONFIRMAR</a>'+
+    '</td></tr></table>'+
+    '<H2 align="center" style="color:red">InvitationsApp</H2>';
     var from_email = new helper.Email(req.hostemail);
     var to_email = new helper.Email(req.guestemail);
     var subject = req.eventname;
@@ -38,7 +39,7 @@ module.exports = function(Guest) {
     "eventname":"Encontro da rede CEMA de instituições",
     "eventdescription":"Encontro da rede CEMA de instituições, que ocorrerá no dia 08/02/17",
     "hostaddress":"ED SEDE DO MPDFT",
-    "hostphone":"3343-9500"
+    "hostphone":"3343-9500",
     "confirmationlink":"www.uol.com.br"
     }
     */
