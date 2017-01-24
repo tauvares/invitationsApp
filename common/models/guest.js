@@ -1,6 +1,5 @@
 'use strict';
 module.exports = function(Guest) {
-//{"username":"admin","password":"admin"}
   Guest.sendEmail = function(req, cb) {
         // using SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
@@ -14,7 +13,7 @@ module.exports = function(Guest) {
     '  padding-right: 0 !important;'+
     '}</style>'+
     '<H2 align="center" style="color:red">InvitationsApp</H2>'+
-    '<img align="center" src="invitationsAppLogoMini.png">InvitationsApp</H2>'+
+    '<img align="center" src="images/invitationsAppLogoMini.png">InvitationsApp</H2>'+
     '<HR>'+
     '<H3 align="center">' + req.eventname + '</H3>'+
     '<p align="center">Prezado responsável pela instituição - ' + req.guestname + ', </p>'+
@@ -33,6 +32,7 @@ module.exports = function(Guest) {
     var subject = req.eventname;
     var content = new helper.Content("text/html", stringTemplate);
     /*
+    //{"username":"admin","password":"admin"}
     {
     "hostname":"João Tavares",
     "hostemail":"joaos@mpdft.mp.br",

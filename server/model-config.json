@@ -13,6 +13,10 @@
       "./mixins"
     ]
   },
+  "container": {
+    "dataSource": "images",
+    "public": true
+  },
   "User": {
     "dataSource": "db",
     "public": false
