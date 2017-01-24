@@ -7,7 +7,7 @@ module.exports = function(Guest) {
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail;
     var fs = require('fs');
-    var stringTemplate = fs.readFileSync("../client/views/emailTemplate.html", "utf8");
+    var stringTemplate = fs.readFileSync("emailTemplate.html", "utf8");
 /*
     var from_email = new helper.Email("joaos@mpdft.mp.br");
     var to_email = new helper.Email("tauvares@gmail.com");
