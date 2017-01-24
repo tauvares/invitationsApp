@@ -1,47 +1,26 @@
 'use strict';
 
 module.exports = function(Guest) {
-
 //{"username":"admin","password":"admin"}
-    // send an email
-  Guest.sendEmail = function(cb) {
-    Guest.app.models.Email.send({
-      to: 'tauvares@gmail.com',
-      from: 'you@gmail.com',
-      subject: 'my subject',
-      text: 'my text',
-      html: 'my <em>html</em>'
-    }, function(err, mail) {
-      console.log('email sent!');
-      //response
-      cb(err);
-    });
-  };
-  Guest.remoteMethod(
-    'sendEmail', {
-      http: {
-        path: '/sendEmail',
-        verb: 'post'
-      },
-      returns: {
-        arg: 'status',
-        type: 'string'
-      }
-    }
-  );
-
-  Guest.sendEmailSG = function(cb) {
+  Guest.sendEmailSG = function(req, cb) {
         // using SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail;
-
+/*
     var from_email = new helper.Email("joaos@mpdft.mp.br");
     var to_email = new helper.Email("tauvares@gmail.com");
     var subject = "Sending with SendGrid is Fun";
     var content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
     var mail = new helper.Mail(from_email, subject, to_email, content);
     var sendgridKey = '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';
+*/
+    var from_email = new helper.Email(req.hostname);
+    var to_email = new helper.Email(req.guestname);
+    var subject = req.eventname;
+    var content = new helper.Content("text/plain", req.eventdescription);
 
+    var mail = new helper.Mail(from_email, subject, to_email, content);
+    var sendgridKey = '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';
     var sg = require('sendgrid')(sendgridKey);
     console.log('The sendgrid key is ' + sendgridKey);
     var request = sg.emptyRequest({
@@ -62,32 +41,8 @@ module.exports = function(Guest) {
         path: '/sendEmailSG',
         verb: 'post'
       },
-      returns: {
-        arg: 'status',
-        type: 'string'
-      }
-    }
-  );
-
-Guest.status = function(cb) {
-    var currentDate = new Date();
-    var currentHour = currentDate.getHours();
-    var OPEN_HOUR = 6;
-    var CLOSE_HOUR = 20;
-    console.log('Current hour is %d', currentHour);
-    var response;
-    if (currentHour > OPEN_HOUR && currentHour < CLOSE_HOUR) {
-      response = 'We are open for business.';
-    } else {
-      response = 'Sorry, we are closed. Open daily from 6am to 8pm.';
-    }
-    cb(null, response);
-  };
-  Guest.remoteMethod(
-    'status', {
-      http: {
-        path: '/status',
-        verb: 'get'
+      accepts: {
+        {arg: 'req', type: 'object', 'http': {source: 'body'}}
       },
       returns: {
         arg: 'status',
