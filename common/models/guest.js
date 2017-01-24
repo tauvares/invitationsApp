@@ -36,21 +36,7 @@ module.exports = function(Guest) {
     var to_email = new helper.Email(req.guestemail);
     var subject = req.eventname;
     var content = new helper.Content("text/html", stringTemplate);
-    /*
-    //{"username":"admin","password":"admin"}
-    {
-    "hostname":"João Tavares",
-    "hostemail":"joaos@mpdft.mp.br",
-    "guestname":"filho segundo",
-    "guestemail":"tauvares@gmail.com",
-    "eventname":"Encontro da rede CEMA de instituições",
-    "eventdescription":"Encontro da rede CEMA de instituições, que ocorrerá no dia 08/02/17",
-    "hostaddress":"ED SEDE DO MPDFT",
-    "hostphone":"3343-9500",
-    "confirmationlink":"www.uol.com.br",
-    "eventphoto":"MPDFT.png"
-    }
-    */
+  
     var mail = new helper.Mail(from_email, subject, to_email, content);
     var sendgridKey = '<YOUR_KEY>';
     var sg = require('sendgrid')(sendgridKey);
