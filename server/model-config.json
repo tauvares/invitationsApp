@@ -48,5 +48,9 @@
   "Guest": {
     "dataSource": "mongoDS",
     "public": true
+  },
+  "container": {
+    "dataSource": "images",
+    "public": true
   }
 }

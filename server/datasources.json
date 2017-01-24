@@ -12,5 +12,11 @@
     "name": "mongoDS",
     "user": "<YOUR USER NAME>",
     "connector": "mongodb"
+  },
+  "images": {
+    "name": "images",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./client/"
   }
 }
