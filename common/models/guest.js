@@ -29,7 +29,7 @@ module.exports = function(Guest) {
     '</td></tr></table>'+
     '<table align="center"><tr><td  align="center">'+
     '<img align="center" src="https://invitationsapp.herokuapp.com/api/containers/images/download/invitationsAppLogoMini.png"></td></tr>'+
-    '</table>'+
+    '</table>';
     var from_email = new helper.Email(req.hostemail);
     var to_email = new helper.Email(req.guestemail);
     var subject = req.eventname;
