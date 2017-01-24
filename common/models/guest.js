@@ -42,7 +42,8 @@ module.exports = function(Guest) {
         verb: 'post'
       },
       accepts: {
-        {arg: 'req', type: 'object', 'http': {source: 'body'}}
+        arg: 'req', type: 'object',
+        'http': {source: 'body'}
       },
       returns: {
         arg: 'status',

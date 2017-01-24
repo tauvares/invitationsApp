@@ -13,9 +13,6 @@
       "./mixins"
     ]
   },
-  "Email": {
-    "dataSource": "mailgunEmail"
-  },
   "User": {
     "dataSource": "db",
     "public": false

@@ -12,16 +12,5 @@
     "name": "mongoDS",
     "user": "admin",
     "connector": "mongodb"
-  },
-  "mailgunEmail": {
-    "name": "MailgunEmail",
-    "connector": "mail",
-    "transports" : [{
-      "type" : "Mailgun",
-      "auth" : {
-        "api_key" : "key-11929e8ae67620b76e7e418880eb1139",
-        "domain" : "https://api.mailgun.net/v3/sandboxaea6fd81b8294bddafdda5696156f36d.mailgun.org"
-      }
-    }]
   }
 }
