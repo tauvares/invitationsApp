@@ -13,7 +13,7 @@ module.exports = function(Guest) {
     '  padding-right: 0 !important;'+
     '}</style>'+
     '<H2 align="center" style="color:red">InvitationsApp</H2>'+
-    '<img align="center" src="images/invitationsAppLogoMini.png">InvitationsApp</H2>'+
+    '<img align="center" src="https://invitationsapp.herokuapp.com/api/containers/images/download/invitationsAppLogoMini.png">'+
     '<HR>'+
     '<H3 align="center">' + req.eventname + '</H3>'+
     '<p align="center">Prezado responsável pela instituição - ' + req.guestname + ', </p>'+
