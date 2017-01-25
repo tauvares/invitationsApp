@@ -100,6 +100,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "sendEmail"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "confirmation"
     }
   ],
   "methods": {}
