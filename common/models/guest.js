@@ -74,7 +74,7 @@ module.exports = function(Guest) {
 
   Guest.confirmation = function(id, cb) {
     //Guest.findById(id);
-/*
+
     Guest.findById(id, {
       include: {
         relation: 'Event',
@@ -89,20 +89,20 @@ module.exports = function(Guest) {
     },
     function(res) {
       //var confirmationInfo = null;
-      confirmationInfo.guestname = res.name;
-      confirmationInfo.eventname = res.event.name;
-      confirmationInfo.eventdescription = res.event.description;
-      confirmationInfo.hostname = res.event.host.name;
+      var confirmationInfo = {
+        "guestname": res.name,
+        "hostname": res.event.host.name,
+        "eventname": res.event.name,
+        "eventdescription": res.event.description
+      }
       cb(null, confirmationInfo);
+    },
+    function(res){
+      console.log(res.error.message);
     });
 
-*/
-    var confirmationInfo = {
-      "guestname": "string1",
-      "hostname": "string2",
-      "eventname": "string3",
-      "eventdescription": "string4"
-    }
+
+
 
     cb(null, confirmationInfo);
   };
