@@ -3,7 +3,6 @@ module.exports = function(Guest) {
   Guest.sendEmail = function(req, cb) {
     // using SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
-    //{"username":"admin","password":"admin"}
 
     var helper = require('sendgrid').mail;
     var stringTemplate =
@@ -39,7 +38,7 @@ module.exports = function(Guest) {
     var subject = req.eventname;
     var content = new helper.Content("text/html", stringTemplate);
     var mail = new helper.Mail(from_email, subject, to_email, content);
-    var sendgridKey = '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';
+    var sendgridKey = 'YOUR_KEY';
     var sg = require('sendgrid')(sendgridKey);
     var request = sg.emptyRequest({
       method: 'POST',
