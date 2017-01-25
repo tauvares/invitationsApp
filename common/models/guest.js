@@ -38,7 +38,7 @@ module.exports = function(Guest) {
     var subject = req.eventname;
     var content = new helper.Content("text/html", stringTemplate);
     var mail = new helper.Mail(from_email, subject, to_email, content);
-    var sendgridKey = SENDGRID_API_KEY;
+    var sendgridKey = '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';
     var sg = require('sendgrid')(sendgridKey);
     var request = sg.emptyRequest({
       method: 'POST',
