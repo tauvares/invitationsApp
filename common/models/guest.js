@@ -72,61 +72,30 @@ module.exports = function(Guest) {
     }
   );
 
-  Guest.confirmation = function(id, cb) {
-    //Guest.findById(id);
-/*
-    Guest.findById(id, {
-      include: {
-        relation: 'Event',
-        scope: {
-          fields: ['name', 'description'],
-          include: {
-            relation: 'Host',
-            fields: ['name']
-          }
-        }
-      }
-    },
-    function(res) {
-      //var confirmationInfo = null;
-      var confirmationInfo = {
-        "guestname": res.name,
-        "hostname": res.event.host.name,
-        "eventname": res.event.name,
-        "eventdescription": res.event.description
-      }
-      cb(null, confirmationInfo);
-    }
-
-    );
-*/
-
-Guest.findById({
-    id: id,
-    filter: {include: {relation: 'event'}}
-  },
-    function(response) {
-      var confirmationInfo = response;
-    },
-    function(response) {
-      console.log("Error: " + response.status + " " + response.statusText);
-      //$scope.message = "Error: " + response.status + " " + response.statusText;
-    }
-  );
-
-    cb(null, confirmationInfo);
+  Guest.confirmation = function(guestid, cb) {
+    Guest.find(
+      {
+        where: {id: guestid},
+        include: {
+        relation:'event',
+        scope:{include:'host'}
+      }}
+      , function(err, guest) {
+      cb(null, guest);
+    });
   };
   Guest.remoteMethod('confirmation', {
     accepts: {
-      arg: 'id',
+      arg: 'guestid',
       type: 'string'
     },
-    returns: [
-      {arg: 'guestname', type: 'string'},
-      {arg: 'hostname', type: 'string'},
-      {arg: 'eventname', type: 'string'},
-      {arg: 'eventdescription', type: 'string'}
-    ]
+    returns: {
+      arg: 'res',
+      type: 'string',
+      'http': {
+        source: 'body'
+      }
+    }
   });
 
 };
