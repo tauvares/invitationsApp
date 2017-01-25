@@ -98,10 +98,10 @@ module.exports = function(Guest) {
 
 */
     var confirmationInfo = {
-      guestname = 'nois',
-      eventname = 'evento x',
-      eventdescription = 'e vai rolar a festa',
-      hostname = 'ivete'
+      "guestname": "string1",
+      "hostname": "string2",
+      "eventname": "string3",
+      "eventdescription": "string4"
     }
 
     cb(null, confirmationInfo);
