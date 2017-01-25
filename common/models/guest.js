@@ -52,7 +52,7 @@ module.exports = function(Guest) {
     }
     */
     var mail = new helper.Mail(from_email, subject, to_email, content);
-    var sendgridKey = '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';
+    var sendgridKey = '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';
     var sg = require('sendgrid')(sendgridKey);
     console.log('The sendgrid key is ' + sendgridKey);
     var request = sg.emptyRequest({
