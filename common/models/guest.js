@@ -96,15 +96,18 @@ module.exports = function(Guest) {
         "eventdescription": res.event.description
       }
       cb(null, confirmationInfo);
-    },
+    }
+    /*,
     function(res){
       console.log(res.error.message);
-    });
+    }
+    */
+    );
 
 
 
 
-    cb(null, confirmationInfo);
+    //cb(null, confirmationInfo);
   };
   Guest.remoteMethod('confirmation', {
     accepts: {
