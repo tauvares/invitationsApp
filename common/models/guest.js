@@ -74,7 +74,7 @@ module.exports = function(Guest) {
 
   Guest.confirmation = function(id, cb) {
     //Guest.findById(id);
-
+/*
     Guest.findById(id, {
       include: {
         relation: 'Event',
@@ -97,17 +97,25 @@ module.exports = function(Guest) {
       }
       cb(null, confirmationInfo);
     }
-    /*,
-    function(res){
-      console.log(res.error.message);
-    }
-    */
+
     );
+*/
 
+Guest.findById({
+    id: id,
+    filter: {include: {relation: 'event'}}
+  })
+  .$promise.then(
+    function(response) {
+      var confirmationInfo = response;
+    },
+    function(response) {
+      console.log("Error: " + response.status + " " + response.statusText);
+      //$scope.message = "Error: " + response.status + " " + response.statusText;
+    }
+  );
 
-
-
-    //cb(null, confirmationInfo);
+    cb(null, confirmationInfo);
   };
   Guest.remoteMethod('confirmation', {
     accepts: {
