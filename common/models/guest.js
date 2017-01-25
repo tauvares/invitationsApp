@@ -54,10 +54,6 @@ module.exports = function(Guest) {
   };
   Guest.remoteMethod(
     'sendEmail', {
-      http: {
-        path: '/sendEmail',
-        verb: 'post'
-      },
       accepts: {
         arg: 'req',
         type: 'object',
@@ -72,10 +68,10 @@ module.exports = function(Guest) {
     }
   );
 
-  Guest.confirmation = function(guestid, cb) {
-    Guest.find(
+  Guest.confirmation = function(id, cb) {
+    Guest.findOne(
       {
-        where: {id: guestid},
+        where: {id: id},
         include: {
         relation:'event',
         scope:{include:'host'}
@@ -85,12 +81,17 @@ module.exports = function(Guest) {
     });
   };
   Guest.remoteMethod('confirmation', {
+    http: {
+      path: '/:id/confirmation',
+      verb: 'get'
+    },
     accepts: {
-      arg: 'guestid',
-      type: 'string'
+      arg: 'id',
+      type: 'string',
+      required: true
     },
     returns: {
-      arg: 'res',
+      arg: 'confirmation',
       type: 'string',
       'http': {
         source: 'body'
