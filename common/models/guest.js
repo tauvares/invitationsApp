@@ -74,6 +74,7 @@ module.exports = function(Guest) {
 
   Guest.confirmation = function(id, cb) {
     //Guest.findById(id);
+/*
     Guest.findById(id, {
       include: {
         relation: 'Event',
@@ -94,7 +95,11 @@ module.exports = function(Guest) {
       confirmationInfo.hostname = res.event.host.name;
       cb(null, confirmationInfo);
     });
-
+*/  confirmationInfo.guestname = 'nois';
+    confirmationInfo.eventname = 'evento x';
+    confirmationInfo.eventdescription = 'e vai rolar a festa';
+    confirmationInfo.hostname = 'ivete';
+    cb(null, confirmationInfo);
   };
   Guest.remoteMethod('confirmation', {
     accepts: {
