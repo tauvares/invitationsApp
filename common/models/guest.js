@@ -18,7 +18,7 @@ module.exports = function(Guest) {
       '</table>' +
       '<HR>' +
       '<H2 align="center">' + req.eventname + '</H2>' +
-      '<p align="center">Prezado responsável pela instituição - ' + req.guestname + ', </p>' +
+      '<p align="center">Caro parceiro da instituição - ' + req.guestname + ', </p>' +
       '<p align="center">' + req.eventdescription + '</p>' +
       '<p align="center">Atenciosamente,</p>' +
       '<H4 align="center">' + req.hostname + '</H4>' +
@@ -38,7 +38,7 @@ module.exports = function(Guest) {
     var subject = req.eventname;
     var content = new helper.Content("text/html", stringTemplate);
     var mail = new helper.Mail(from_email, subject, to_email, content);
-    var sendgridKey = 'YOUR_KEY';
+    var sendgridKey = SENDGRID_API_KEY;
     var sg = require('sendgrid')(sendgridKey);
     var request = sg.emptyRequest({
       method: 'POST',
@@ -95,6 +95,25 @@ module.exports = function(Guest) {
       'http': {
         source: 'body'
       }
+    }
+  });
+
+  Guest.barcode = function(id, cb) {
+    cb(null, id);
+  };
+  Guest.remoteMethod('barcode', {
+    http: {
+      path: '/:id/barcode',
+      verb: 'get'
+    },
+    accepts: {
+      arg: 'id',
+      type: 'string',
+      required: true
+    },
+    returns: {
+      arg: 'barcode',
+      type: 'string'
     }
   });
 

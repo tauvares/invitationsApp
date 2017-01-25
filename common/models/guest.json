@@ -107,6 +107,13 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "confirmation"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "barcode"
     }
   ],
   "methods": {}
