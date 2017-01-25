@@ -104,8 +104,7 @@ module.exports = function(Guest) {
 Guest.findById({
     id: id,
     filter: {include: {relation: 'event'}}
-  })
-  .$promise.then(
+  },
     function(response) {
       var confirmationInfo = response;
     },
