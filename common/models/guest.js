@@ -95,10 +95,15 @@ module.exports = function(Guest) {
       confirmationInfo.hostname = res.event.host.name;
       cb(null, confirmationInfo);
     });
-*/  confirmationInfo.guestname = 'nois';
-    confirmationInfo.eventname = 'evento x';
-    confirmationInfo.eventdescription = 'e vai rolar a festa';
-    confirmationInfo.hostname = 'ivete';
+
+*/
+    var confirmationInfo = {
+      guestname = 'nois';
+      eventname = 'evento x';
+      eventdescription = 'e vai rolar a festa';
+      hostname = 'ivete';
+    }
+
     cb(null, confirmationInfo);
   };
   Guest.remoteMethod('confirmation', {
