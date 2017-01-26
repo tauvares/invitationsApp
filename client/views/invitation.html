@@ -46,8 +46,7 @@
             <label class="col-sm-2">Código de barra: </label>
             <div>
                 <label class="col-sm-10">{{guest.id}}</label>
-                <angular-barcode ng-model="guest.id" bc-options="bc" bc-class="barcode" bc-type="svg"></angular-barcode>
-
+                <barcode type="code128b" string="{{guest.id}}" options="{{options}}"></barcode>
             </div>
         </div>
       </div>
