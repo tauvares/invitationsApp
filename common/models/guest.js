@@ -68,16 +68,7 @@ module.exports = function(Guest) {
   );
 
   Guest.confirmation = function(id, cb) {
-    Guest.findOne(
-      {
-        where: {id: id},
-        include: {
-        relation:'event',
-        scope:{include:'host'}
-      }}
-      , function(err, guest) {
-      cb(null, guest);
-    });
+      cb(null, id);
   };
   Guest.remoteMethod('confirmation', {
     http: {
