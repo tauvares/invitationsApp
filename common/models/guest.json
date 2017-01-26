@@ -114,6 +114,20 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "barcode"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "confirmation"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "barcode"
     }
   ],
   "methods": {}
