@@ -98,6 +98,12 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "presence"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
     }
   ],
   "methods": {}
