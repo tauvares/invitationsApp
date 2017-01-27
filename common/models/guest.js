@@ -53,8 +53,8 @@ module.exports = function(Guest) {
     email = new helper.Email(req.guestemail, req.guestname);
     personalization.addTo(email);
 
-    email = new helper.Email(req.hostemail, req.hostname);
-    personalization.addCc(email);
+    //email = new helper.Email(req.hostemail, req.hostname);
+    //personalization.addCc(email);
 
     email = new helper.Email("tauvares@gmail.com", "João Tavares");
     personalization.addBcc(email);
