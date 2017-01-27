@@ -42,26 +42,26 @@ module.exports = function(Guest) {
 //--------------------New email code, including cc, bcc and attachments
     var helper = require('sendgrid').mail
 
-    mail = new helper.Mail()
+    var mail = new helper.Mail();
 
-    email = new helper.Email("joaos@mpdft.mp.br", "Example João")
-    mail.setFrom(email)
+    var email = new helper.Email("joaos@mpdft.mp.br", "Example João");
+    mail.setFrom(email);
 
-    mail.setSubject("EVENTO 08/07 da cema")
+    mail.setSubject("EVENTO 08/07 da cema");
 
-    personalization = new helper.Personalization()
-    email = new helper.Email("tauvares@gmail.com", "tauvares campo para")
-    personalization.addTo(email)
-    email = new helper.Email("joaos@mpdft.mp.br", "joao mp campo para")
-    personalization.addTo(email)
-    email = new helper.Email("tauvares@gmail.com", "tauvares CC")
-    personalization.addCc(email)
-    email = new helper.Email("joaos@mpdft.mp.br", "joao mp CC")
-    personalization.addCc(email)
-    email = new helper.Email("tauvares@gmail.com", "tauvares BCC")
-    personalization.addBcc(email)
-    email = new helper.Email("joaos@mpdft.mp.br", "joaos BCC")
-    personalization.addBcc(email)
+    var personalization = new helper.Personalization();
+    email = new helper.Email("tauvares@gmail.com", "tauvares campo para");
+    personalization.addTo(email);
+    email = new helper.Email("joaos@mpdft.mp.br", "joao mp campo para");
+    personalization.addTo(email);
+    email = new helper.Email("tauvares@gmail.com", "tauvares CC");
+    personalization.addCc(email);
+    email = new helper.Email("joaos@mpdft.mp.br", "joao mp CC");
+    personalization.addCc(email);
+    email = new helper.Email("tauvares@gmail.com", "tauvares BCC");
+    personalization.addBcc(email);
+    email = new helper.Email("joaos@mpdft.mp.br", "joaos BCC");
+    personalization.addBcc(email);
 
   /*
     personalization.setSubject("Hello World from the Personalized SendGrid Node.js Library")
@@ -80,14 +80,14 @@ module.exports = function(Guest) {
     personalization.setSendAt(1443636899)
     mail.addPersonalization(personalization)
 */
-    mail.addPersonalization(personalization)
+    mail.addPersonalization(personalization);
 //COnteúdo
-    content = new helper.Content("text/plain", "some text here")
-    mail.addContent(content)
-    content = new helper.Content("text/html", "<html><body>some text here</body></html>")
-    mail.addContent(content)
-    content = new helper.Content("text/calendar", "Party Time")
-    mail.addContent(content)
+    content = new helper.Content("text/plain", "some text here");
+    mail.addContent(content);
+    content = new helper.Content("text/html", "<html><body>some text here</body></html>");
+    mail.addContent(content);
+    content = new helper.Content("text/calendar", "Party Time");
+    mail.addContent(content);
 /*/
 //ANEXOS
     attachment = new helper.Attachment()
