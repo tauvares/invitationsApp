@@ -50,17 +50,22 @@ module.exports = function(Guest) {
     mail.setSubject("EVENTO 08/07 da cema");
 
     var personalization = new helper.Personalization();
-    email = new helper.Email("tauvares@gmail.com", "tauvares campo para");
+    email = new helper.Email("tauvares1@gmail.com", "tauvares campo para");
     personalization.addTo(email);
-    email = new helper.Email("joaos@mpdft.mp.br", "joao mp campo para");
+
+    email = new helper.Email("joaos1@mpdft.mp.br", "joao mp campo para");
     personalization.addTo(email);
-    email = new helper.Email("tauvares@gmail.com", "tauvares CC");
+
+    email = new helper.Email("tauvare2s@gmail.com", "tauvares CC");
     personalization.addCc(email);
+
     email = new helper.Email("joaos@mpdft.mp.br", "joao mp CC");
     personalization.addCc(email);
+
     email = new helper.Email("tauvares@gmail.com", "tauvares BCC");
     personalization.addBcc(email);
-    email = new helper.Email("joaos@mpdft.mp.br", "joaos BCC");
+
+    email = new helper.Email("joaos2@mpdft.mp.br", "joaos BCC");
     personalization.addBcc(email);
 
   /*
