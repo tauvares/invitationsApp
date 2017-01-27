@@ -82,12 +82,12 @@ module.exports = function(Guest) {
 */
     mail.addPersonalization(personalization);
 //COnteúdo
-    content = new helper.Content("text/plain", "some text here");
-    mail.addContent(content);
+    //content = new helper.Content("text/plain", "some text here");
+    //mail.addContent(content);
     content = new helper.Content("text/html", "<html><body>some text here</body></html>");
     mail.addContent(content);
-    content = new helper.Content("text/calendar", "Party Time");
-    mail.addContent(content);
+    //content = new helper.Content("text/calendar", "Party Time");
+    //mail.addContent(content);
 /*/
 //ANEXOS
     attachment = new helper.Attachment()
