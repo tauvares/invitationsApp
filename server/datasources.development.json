@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "mongoDS": {
-    "host": "ds111748.mlab.com",
-    "port": 11748,
-    "url": "mongodb://admin:60senaocansa@ds111748.mlab.com:11748/invitations",
+    "host": "localhost",
+    "port": 27017,
+    "url": "mongodb://localhost:27017/invitations",
     "database": "invitations",
-    "password": "60senaocansa",
+    "password": "",
     "name": "mongoDS",
-    "user": "admin",
+    "user": "",
     "connector": "mongodb"
   },
   "images": {
