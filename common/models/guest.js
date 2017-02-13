@@ -40,7 +40,7 @@ module.exports = function(Guest) {
       '</table>' +
       '<HR>' +
       '<H2 align="center">' + req.eventname + '</H2>' +
-      '<p align="center">Caro parceiro da instituição - ' + req.guestname + ', </p>' +
+      '<p align="center">Prezada(o) ' + req.guestname + ', </p>' +
       '<p align="center">' + req.eventdescription + '</p>' +
       '<p align="center">Atenciosamente,</p>' +
       '<H4 align="center">' + req.hostname + '</H4>' +
