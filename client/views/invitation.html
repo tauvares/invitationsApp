@@ -7,40 +7,38 @@
       </div>
       <div class="col-xs-12 col-sm-9" ng-if="guest.invitationsConfirmed>1">
         <div class="form-group">
+            <label class="col-sm-2">Convidado: </label>
+            <div>
+                <label class="col-sm-10">{{guest.name}}</label>
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-2">Evento: </label>
             <div>
                 <label class="col-sm-10">{{guest.event.name}}</label>
             </div>
         </div>
         <div class="form-group">
+          <!--
             <label class="col-sm-2">Realizado por: </label>
-            <div>
-                <label class="col-sm-10">{{guest.event.host.name}}</label>
-            </div>
+          -->
+          <div>
+              <label class="col-sm-10">{{guest.event.description}}</label>
+          </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-2">Endereço: </label>
-            <div>
-                <label class="col-sm-10">{{guest.event.host.address}}</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2">Tel.: </label>
-            <div>
-                <label class="col-sm-10">{{guest.event.host.phone}}</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2">E-mail: </label>
-            <div>
-                <label class="col-sm-10">{{guest.event.host.email}}</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-2">Convidado: </label>
-            <div>
-                <label class="col-sm-10">{{guest.name}}</label>
-            </div>
+          <div>
+              <label class="col-sm-10">{{guest.event.host.name}}</label>
+          </div>
+          <div>
+              <label class="col-sm-10">{{guest.event.host.address}}</label>
+          </div>
+          <div>
+              <label class="col-sm-10">{{guest.event.host.phone}}</label>
+          </div>
+          <div>
+              <label class="col-sm-10">{{guest.event.host.email}}</label>
+          </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2"></label>
