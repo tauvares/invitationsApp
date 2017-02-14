@@ -76,7 +76,7 @@
                   </span>
               </div>
             </div>
-            <div text-angular ng-model="event.description"></div>
+            <div ng-model="event.description" quill></div>
             <div class="form-group" ng-class="{ 'has-error' : eventForm.startDate.$invalid && !eventForm.startDate.$pristine }">
                 <label for="startDate" class="col-sm-2 control-label">Start Date</label>
                 <div class="col-sm-2">
