@@ -76,8 +76,8 @@ module.exports = function(Guest) {
 */
 //--------------------END New email code, including cc, bcc and attachments
 
-    //var sendgridKey = SENDGRID_API_KEY;
-    var sendgridKey = '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';
+    var sendgridKey = SENDGRID_API_KEY;
+
 
     var sg = require('sendgrid')(sendgridKey);
     var request = sg.emptyRequest({
