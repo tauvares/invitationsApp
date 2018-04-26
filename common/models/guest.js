@@ -106,7 +106,7 @@ module.exports = function (Guest) {
       // to:   credentials.user,                  // Send to yourself
       // you also may set array of recipients:
       // [ 'user1@gmail.com', 'user2@gmail.com' ]
-      // from:    credentials.user,            // from: by default equals to user
+      from:    'tauvares@gmail.com',            // from: by default equals to user
       // replyTo: credentials.user,            // replyTo: by default undefined
       // bcc: 'some-user@mail.com',            // almost any option of `nodemailer` will be passed to it
       subject: 'test subject',
@@ -123,7 +123,7 @@ module.exports = function (Guest) {
 
     send({ // Overriding default parameters
       subject: 'attached ' + filepath,         // Override value set as default
-      files: [filepath],
+    //  files: [filepath],
     }, function (err, res) {
       console.log('* [example 1.1] send() callback returned: err:', err, '; res:', res);
     });
@@ -135,11 +135,11 @@ module.exports = function (Guest) {
 
     send({ // Overriding default parameters
       subject: 'attached ' + filepath,              // Override value set as default
-      files: [                                    // Array of files to attach
+      /*files: [                                    // Array of files to attach
         {
           path: filepath,
           filename: 'filename-can-be-changed.txt' // You can override filename in the attachment if needed
-        }
+        }*/
       ],
     }, function (err, res) {
       console.log('* [example 1.2] send() callback returned: err:', err, '; res:', res);
