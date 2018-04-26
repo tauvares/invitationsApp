@@ -1,6 +1,6 @@
 'use strict';
-module.exports = function(Guest) {
-  Guest.sendEmail = function(req, cb) {
+module.exports = function (Guest) {
+  Guest.sendEmail2 = function (req, cb) {
     // using SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail
@@ -57,24 +57,24 @@ module.exports = function(Guest) {
       '</table>';
     var content = new helper.Content("text/html", stringTemplate);
     mail.addContent(content);
-/*/
-//ANEXOS
-    attachment = new helper.Attachment()
-    attachment.setContent("TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gQ3JhcyBwdW12")
-    attachment.setType("application/pdf")
-    attachment.setFilename("balance_001.pdf")
-    attachment.setDisposition("attachment")
-    mail.addAttachment(attachment)
-
-    attachment = new helper.Attachment()
-    attachment.setContent("BwdW")
-    attachment.setType("image/png")
-    attachment.setFilename("banner.png")
-    attachment.setDisposition("inline")
-    attachment.setContentId("banner")
-    mail.addAttachment(attachment)
-*/
-//--------------------END New email code, including cc, bcc and attachments
+    /*/
+    //ANEXOS
+        attachment = new helper.Attachment()
+        attachment.setContent("TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3RldHVyIGFkaXBpc2NpbmcgZWxpdC4gQ3JhcyBwdW12")
+        attachment.setType("application/pdf")
+        attachment.setFilename("balance_001.pdf")
+        attachment.setDisposition("attachment")
+        mail.addAttachment(attachment)
+    
+        attachment = new helper.Attachment()
+        attachment.setContent("BwdW")
+        attachment.setType("image/png")
+        attachment.setFilename("banner.png")
+        attachment.setDisposition("inline")
+        attachment.setContentId("banner")
+        mail.addAttachment(attachment)
+    */
+    //--------------------END New email code, including cc, bcc and attachments
 
     var sendgridKey = SENDGRID_API_KEY;
 
@@ -85,11 +85,66 @@ module.exports = function(Guest) {
       path: '/v3/mail/send',
       body: mail.toJSON()
     });
-    sg.API(request, function(error, response) {
+    sg.API(request, function (error, response) {
       console.log(response.statusCode);
       console.log(response.body);
       console.log(response.headers);
     })
+  };
+  Guest.sendEmail = function (req, cb) {
+    console.log('* [example 1.1] sending test email');
+
+    // Require'ing module and setting default options
+
+    var send = require('gmail-send')({
+      //var send = require('../index.js')({
+      user: 'tauvares@gmail.com',
+      // user: credentials.user,                  // Your GMail account used to send emails
+      pass: '4321a1234',
+      // pass: credentials.pass,                  // Application-specific password
+      to: 'tauvares@gmail.com',
+      // to:   credentials.user,                  // Send to yourself
+      // you also may set array of recipients:
+      // [ 'user1@gmail.com', 'user2@gmail.com' ]
+      // from:    credentials.user,            // from: by default equals to user
+      // replyTo: credentials.user,            // replyTo: by default undefined
+      // bcc: 'some-user@mail.com',            // almost any option of `nodemailer` will be passed to it
+      subject: 'test subject',
+      text: 'gmail-send example 1',         // Plain text
+      //html:    '<b>html text</b>'            // HTML
+    });
+
+
+    // Override any default option and send email
+
+    console.log('* [example 1.1] sending test email');
+
+    var filepath = './demo-attachment.txt';  // File to attach
+
+    send({ // Overriding default parameters
+      subject: 'attached ' + filepath,         // Override value set as default
+      files: [filepath],
+    }, function (err, res) {
+      console.log('* [example 1.1] send() callback returned: err:', err, '; res:', res);
+    });
+
+
+    // Set additional file properties
+
+    console.log('* [example 1.2] sending test email');
+
+    send({ // Overriding default parameters
+      subject: 'attached ' + filepath,              // Override value set as default
+      files: [                                    // Array of files to attach
+        {
+          path: filepath,
+          filename: 'filename-can-be-changed.txt' // You can override filename in the attachment if needed
+        }
+      ],
+    }, function (err, res) {
+      console.log('* [example 1.2] send() callback returned: err:', err, '; res:', res);
+    });
+
   };
   Guest.remoteMethod(
     'sendEmail', {
@@ -107,8 +162,8 @@ module.exports = function(Guest) {
     }
   );
 
-  Guest.confirmation = function(id, cb) {
-      cb(null, id);
+  Guest.confirmation = function (id, cb) {
+    cb(null, id);
   };
   Guest.remoteMethod('confirmation', {
     http: {
@@ -129,7 +184,7 @@ module.exports = function(Guest) {
     }
   });
 
-  Guest.barcode = function(id, cb) {
+  Guest.barcode = function (id, cb) {
     cb(null, id);
   };
   Guest.remoteMethod('barcode', {
