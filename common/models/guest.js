@@ -139,8 +139,8 @@ module.exports = function (Guest) {
         {
           path: filepath,
           filename: 'filename-can-be-changed.txt' // You can override filename in the attachment if needed
-        }*/
-      ],
+        }
+      ],*/
     }, function (err, res) {
       console.log('* [example 1.2] send() callback returned: err:', err, '; res:', res);
     });
