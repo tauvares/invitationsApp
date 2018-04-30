@@ -19,12 +19,12 @@
     "loopback-datasource-juggler": "^2.39.0",
     "passport": "^0.3.2",
     "serve-favicon": "^2.0.1",
+    "gmail-send": "^1.2.14",
     "strong-error-handler": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "^2.13.1",
-    "eslint-config-loopback": "^4.0.0",
-    "gmail-send": "^1.2.14",
+    "eslint-config-loopback": "^4.0.0",    
     "nsp": "^2.1.0"
   },
   "repository": {
