@@ -132,6 +132,8 @@ module.exports = function (Guest) {
         '</table>'
     });
     // Override any default option and send email
+    console.log('Enviou');
+    
     var filepath = './demo-attachment.txt';  // File to attach
     send({ 
       from: req.hostemail,            // from: by default equals to user
