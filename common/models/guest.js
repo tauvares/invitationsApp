@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function (Guest) {
-  Guest.sendEmail = function (req, cb) {
+  Guest.sendEmail2 = function (req, cb) {
     // using SendGrid's v3 Node.js Library
     // https://github.com/sendgrid/sendgrid-nodejs
     var helper = require('sendgrid').mail
@@ -92,7 +92,7 @@ module.exports = function (Guest) {
     })
   };
   
-  Guest.sendEmail2 = function (req, cb) {    
+  Guest.sendEmail = function (req, cb) {    
     var send = require('gmail-send')({
       user: 'tauvares@gmail.com',
       // user: credentials.user,                  // Your GMail account used to send emails
