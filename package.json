@@ -25,7 +25,6 @@
     "eslint": "^2.13.1",
     "eslint-config-loopback": "^4.0.0",
     "gmail-send": "^1.2.14",
-    "mail": "^0.2.3",
     "nsp": "^2.1.0"
   },
   "repository": {
