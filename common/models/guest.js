@@ -118,7 +118,7 @@ module.exports = function (Guest) {
         '<p align="center">' + req.eventdescription + '</p>' +
         '<p align="center">Atenciosamente,</p>' +
         '<H4 align="center">' + req.hostname + '</H4>' +
-        '<H4 align="center">' + req.eventaddress + '</H4>' +
+        '<H4 align="center">' + req.hostaddress + '</H4>' +
         '<H4 align="center">' + req.hostphone + '</H4>' +
         '<HR>' +
         '<table align="center"><tr><td align="center" style="-webkit-border-radius: 8px; -moz-border-radius: 8px; border-radius: 8px; font-size: 16px;" bgcolor="#FF6666">' +
